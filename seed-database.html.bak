@@ -205,7 +205,7 @@
             statusDiv.innerHTML = '⏳ Seeding database...';
 
             try {
-                const { data, error } = await supabaseInstance
+                const { data, error } = await supabase
                     .from('listings')
                     .insert(sampleListings);
 
@@ -239,7 +239,7 @@
             statusDiv.innerHTML = '⏳ Clearing database...';
 
             try {
-                const { error } = await supabaseInstance
+                const { error } = await supabase
                     .from('listings')
                     .delete()
                     .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all
