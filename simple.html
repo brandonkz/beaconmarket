@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BeaconMarket Simple Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+    <h1>BeaconMarket Test</h1>
+    <div id="output">Checking...</div>
+    
+    <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+    <script>
+        setTimeout(async function() {
+            const output = document.getElementById('output');
+            
+            try {
+                // Check if supabase loaded
+                if (typeof supabase === 'undefined') {
+                    output.innerHTML = '❌ Supabase library not loaded';
+                    return;
+                }
+                
+                // Create client
+                const client = supabase.createClient(
+                    'https://fuddzrlnbrseofguuikp.supabase.co',
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1ZGR6cmxuYnJzZW9mZ3V1aWtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MDE5NjMsImV4cCI6MjA4NzE3Nzk2M30.pAWnJbzoS-mWOt3LiCVSxb1exm8eT0_rAfT9kSt2XJo'
+                );
+                
+                output.innerHTML = 'Client created, fetching data...<br>';
+                
+                // Fetch data
+                const { data, error } = await client.from('listings').select('*');
+                
+                if (error) {
+                    output.innerHTML += '❌ Error: ' + error.message;
+                    return;
+                }
+                
+                output.innerHTML = '✅ Success! Found ' + data.length + ' listings:<br><br>';
+                
+                data.forEach(function(item) {
+                    output.innerHTML += '<div style="border:1px solid #ccc; padding:10px; margin:10px 0;">';
+                    output.innerHTML += '<b>' + item.title + '</b><br>';
+                    output.innerHTML += 'R' + item.price + ' ' + item.price_unit + '<br>';
+                    output.innerHTML += item.description + '<br>';
+                    output.innerHTML += 'Contact: ' + item.whatsapp;
+                    output.innerHTML += '</div>';
+                });
+                
+            } catch (e) {
+                output.innerHTML = '❌ Exception: ' + e.message;
+            }
+        }, 500);
+    </script>
+</body>
+</html>
