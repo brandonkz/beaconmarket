@@ -68,7 +68,7 @@ Test it from your Mac terminal:
 cd ~/Documents/BeaconMarket
 
 # Test creating a listing
-node openclaw-integration.js "LIST: Mountain bike, R200 per day" "0937787970" "Brandon"
+node openclaw-integration.js "LIST: Mountain bike, R200 per day" "0837787970" "Brandon"
 
 # Should see: "✅ Listing Created!"
 
@@ -96,7 +96,7 @@ Once the above works, I'll set up the automation so:
 
 ### Creating a listing:
 ```
-User WhatsApps 093 778 7970:
+User WhatsApps 083 778 7970:
 "LIST: 3-bed beach house, sleeps 6, R12000 per night, Feb 22-28"
 
 Bot replies in 2 seconds:

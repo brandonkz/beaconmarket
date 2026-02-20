@@ -353,7 +353,7 @@ if (require.main === module) {
     console.log('🏖️ BeaconMarket Bot - Test Mode');
     console.log('Type commands as if you were sending WhatsApp messages\n');
     
-    const testNumber = '0937787970';
+    const testNumber = '0837787970';
     
     rl.on('line', async (line) => {
         const response = await handleMessage(line, testNumber, 'Test User');
