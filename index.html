@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeaconMarket - Beacon Isle Community Marketplace</title>
+    <meta name="description" content="Rent holiday homes, borrow items, and find services in Beacon Isle, Plettenberg Bay">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🏖️ BeaconMarket</h1>
+                <p class="tagline">Your Beacon Isle Community Marketplace</p>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="listings.html">Browse</a>
+                <a href="list-item.html" class="btn-primary">List Something</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Rent, Borrow & Share in Beacon Isle</h2>
+            <p>Holiday homes • Equipment rentals • Local services • Community trust</p>
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search for holiday homes, kayaks, cleaners...">
+                <button onclick="searchListings()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h3>Browse by Category</h3>
+            <div class="category-grid">
+                <a href="listings.html?category=holiday-homes" class="category-card">
+                    <span class="icon">🏡</span>
+                    <h4>Holiday Homes</h4>
+                    <p>Book direct, no fees</p>
+                </a>
+                <a href="listings.html?category=equipment" class="category-card">
+                    <span class="icon">🚴</span>
+                    <h4>Equipment</h4>
+                    <p>Bikes, kayaks, SUPs, more</p>
+                </a>
+                <a href="listings.html?category=services" class="category-card">
+                    <span class="icon">🧹</span>
+                    <h4>Services</h4>
+                    <p>Cleaners, chefs, dog walkers</p>
+                </a>
+                <a href="listings.html?category=events" class="category-card">
+                    <span class="icon">🎨</span>
+                    <h4>Event Gear</h4>
+                    <p>Easels, tables, party supplies</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h3>Recently Listed</h3>
+            <div id="recent-listings" class="listings-grid">
+                <p class="loading">Loading recent listings...</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h3>List Something Today</h3>
+            <p>Got a holiday home, equipment, or service to share? List it in 2 minutes.</p>
+            <a href="list-item.html" class="btn-primary">Create Listing</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>BeaconMarket - Beacon Isle Community Marketplace</p>
+            <p>🇿🇦 Proudly Plettenberg Bay | For residents, by residents</p>
+            <div class="links">
+                <a href="mailto:hello@beaconmarket.co.za">Contact</a>
+                <a href="https://wa.me/27828868631">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Load recent listings on homepage
+        window.addEventListener('DOMContentLoaded', async () => {
+            const listings = await getRecentListings(6);
+            displayListings(listings, 'recent-listings');
+        });
+
+        function searchListings() {
+            const query = document.getElementById('search').value;
+            window.location.href = `listings.html?q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Listings - BeaconMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🏖️ BeaconMarket</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="listings.html" class="active">Browse</a>
+                <a href="list-item.html" class="btn-primary">List Something</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="browse">
+        <div class="container">
+            <h2>Browse Listings</h2>
+            
+            <div class="filters">
+                <select id="category-filter" onchange="filterListings()">
+                    <option value="">All Categories</option>
+                    <option value="holiday-homes">Holiday Homes</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="services">Services</option>
+                    <option value="events">Event Gear</option>
+                    <option value="parking">Parking & Storage</option>
+                </select>
+                
+                <input type="text" id="search-filter" placeholder="Search..." onkeyup="filterListings()">
+                
+                <select id="sort-filter" onchange="filterListings()">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div id="listings-container" class="listings-grid">
+                <p class="loading">Loading listings...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>BeaconMarket - Beacon Isle Community Marketplace</p>
+            <p>🇿🇦 Proudly Plettenberg Bay | For residents, by residents</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        let allListings = [];
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            // Check for URL params (category or search query)
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get('category');
+            const query = params.get('q');
+
+            if (category) {
+                document.getElementById('category-filter').value = category;
+            }
+            if (query) {
+                document.getElementById('search-filter').value = query;
+            }
+
+            // Load and display listings
+            allListings = await getAllListings();
+            filterListings();
+        });
+
+        function filterListings() {
+            const category = document.getElementById('category-filter').value;
+            const search = document.getElementById('search-filter').value.toLowerCase();
+            const sort = document.getElementById('sort-filter').value;
+
+            let filtered = allListings;
+
+            // Filter by category
+            if (category) {
+                filtered = filtered.filter(l => l.category === category);
+            }
+
+            // Filter by search
+            if (search) {
+                filtered = filtered.filter(l => 
+                    l.title.toLowerCase().includes(search) || 
+                    l.description.toLowerCase().includes(search)
+                );
+            }
+
+            // Sort
+            if (sort === 'newest') {
+                filtered.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            } else if (sort === 'oldest') {
+                filtered.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+            } else if (sort === 'price-low') {
+                filtered.sort((a, b) => (a.price || 0) - (b.price || 0));
+            } else if (sort === 'price-high') {
+                filtered.sort((a, b) => (b.price || 0) - (a.price || 0));
+            }
+
+            displayListings(filtered, 'listings-container');
+        }
+    </script>
+</body>
+</html>

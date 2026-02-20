@@ -1,0 +1,105 @@
+[
+  {
+    "category": "holiday-homes",
+    "title": "Luxury 3-Bedroom Beach House",
+    "description": "Stunning sea-facing home with pool, 3 bedrooms, 2 bathrooms. Sleeps 6. Fully equipped kitchen, DSTV, WiFi. Walk to beach in 2 minutes. Perfect for families.",
+    "price": 3500,
+    "price_unit": "per night",
+    "owner_name": "Sarah Thompson",
+    "whatsapp": "0721234567",
+    "email": "sarah@example.com",
+    "verified_resident": true
+  },
+  {
+    "category": "equipment",
+    "title": "Mountain Bikes (2 available)",
+    "description": "Two well-maintained mountain bikes. Perfect for exploring Plett trails. Helmets included. Available daily or weekly rental.",
+    "price": 200,
+    "price_unit": "per day",
+    "owner_name": "Mike van der Merwe",
+    "whatsapp": "0837654321",
+    "verified_resident": true
+  },
+  {
+    "category": "equipment",
+    "title": "2x Stand-Up Paddleboards (SUPs)",
+    "description": "Inflatable SUPs with paddles, pumps, and safety leashes. Great for calm days on the lagoon. Beginner-friendly.",
+    "price": 150,
+    "price_unit": "per day",
+    "owner_name": "Lisa Jacobs",
+    "whatsapp": "0829876543",
+    "verified_resident": true
+  },
+  {
+    "category": "services",
+    "title": "Professional Cleaner",
+    "description": "Experienced cleaner available for holiday homes and regular cleaning. References available. 8 years in Beacon Isle. Very reliable.",
+    "price": 250,
+    "price_unit": "per service",
+    "owner_name": "Nomsa Dlamini",
+    "whatsapp": "0734561234",
+    "verified_resident": true
+  },
+  {
+    "category": "events",
+    "title": "Artist Easel for Rent",
+    "description": "Professional wooden easel, perfect for functions or painting sessions. Adjustable height. Good condition.",
+    "price": 50,
+    "price_unit": "per day",
+    "owner_name": "Val Peterson",
+    "whatsapp": "0828868631",
+    "verified_resident": true
+  },
+  {
+    "category": "equipment",
+    "title": "Weber Braai on Wheels",
+    "description": "Large Weber kettle braai with wheels. Perfect for beach braais or big gatherings. Includes grid and tools.",
+    "price": 100,
+    "price_unit": "per day",
+    "owner_name": "Johan Pretorius",
+    "whatsapp": "0847123456",
+    "verified_resident": true
+  },
+  {
+    "category": "holiday-homes",
+    "title": "Cozy 2-Bed Garden Cottage",
+    "description": "Private cottage with garden view. 2 bedrooms, 1 bathroom. Sleeps 4. Quiet location, secure parking. WiFi and DSTV included.",
+    "price": 1800,
+    "price_unit": "per night",
+    "owner_name": "Peter and Jane Williams",
+    "whatsapp": "0829991234",
+    "email": "williams@example.com",
+    "verified_resident": true
+  },
+  {
+    "category": "services",
+    "title": "Private Chef - Seafood Specialist",
+    "description": "Local chef available for dinner parties and special occasions. Specialize in fresh seafood and South African cuisine. Menus tailored to your needs.",
+    "price": 800,
+    "price_unit": "per service",
+    "owner_name": "Chef Marco",
+    "whatsapp": "0731239876",
+    "email": "marco@example.com",
+    "verified_resident": true
+  },
+  {
+    "category": "parking",
+    "title": "Secure Garage Space Available",
+    "description": "Single lock-up garage available for monthly rental. Perfect for boat, caravan, or vehicle storage. 24/7 estate security.",
+    "price": 500,
+    "price_unit": "per month",
+    "owner_name": "Robert Lee",
+    "whatsapp": "0823334455",
+    "verified_resident": true
+  },
+  {
+    "category": "equipment",
+    "title": "Kids' Beach Toys & Boogie Boards",
+    "description": "Collection of beach toys, 2 boogie boards, sand toys, buckets. Perfect for keeping the kids entertained. Clean and well-maintained.",
+    "price": 50,
+    "price_unit": "per day",
+    "owner_name": "Emma Davis",
+    "whatsapp": "0827778899",
+    "verified_resident": true
+  }
+]
