@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresnaye Community Marketplace - WhatsApp AI Assistant</title>
+    <meta name="description" content="Premium community marketplace for Fresnaye & Beacon Isle residents. List items, find rentals, discover local services - all via WhatsApp.">
+    <link rel="stylesheet" href="css/fresnaye-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">Fresnaye Marketplace</h1>
+                <p class="tagline">Beacon Isle & Fresnaye Community</p>
+            </div>
+            <div class="nav-links">
+                <a href="#beacon-isle">Beacon Isle</a>
+                <a href="#marketplace">Second Hand</a>
+                <a href="#rentals">Rentals</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title">Your Community, Simplified</h2>
+            <p class="hero-subtitle">Buy, sell, rent & share — all through WhatsApp</p>
+            <div class="hero-cta">
+                <a href="https://wa.me/27837787970?text=HELP" class="btn-primary btn-large">
+                    <span class="icon">💬</span> Start on WhatsApp
+                </a>
+                <a href="#how-it-works" class="btn-secondary btn-large">Learn How</a>
+            </div>
+            <p class="hero-note">For Fresnaye & Beacon Isle residents</p>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Active Listings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">AI Assistant</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Free</div>
+                    <div class="stat-label">For Residents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beacon Isle Section -->
+    <section id="beacon-isle" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Beacon Isle Estate</span>
+                <h2 class="section-title">Estate Community Hub</h2>
+                <p class="section-subtitle">Share equipment, book facilities, coordinate events</p>
+            </div>
+
+            <div class="category-showcase">
+                <div class="showcase-card">
+                    <div class="showcase-icon">🏖️</div>
+                    <h3>Beach Equipment</h3>
+                    <p>SUPs, kayaks, surfboards, umbrellas</p>
+                    <a href="#" class="link-arrow">Browse →</a>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-icon">🏡</div>
+                    <h3>Holiday Homes</h3>
+                    <p>Rent directly from neighbors</p>
+                    <a href="#" class="link-arrow">Browse →</a>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-icon">🎾</div>
+                    <h3>Facilities</h3>
+                    <p>Tennis courts, clubhouse, pool</p>
+                    <a href="#" class="link-arrow">Book →</a>
+                </div>
+            </div>
+
+            <div id="beacon-listings" class="listings-grid">
+                <!-- Beacon Isle listings loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Hand Marketplace -->
+    <section id="marketplace" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Second Hand</span>
+                <h2 class="section-title">Community Marketplace</h2>
+                <p class="section-subtitle">Buy & sell within Fresnaye — furniture, electronics, sports gear & more</p>
+            </div>
+
+            <div class="filters-bar">
+                <select id="category-filter" class="filter-select">
+                    <option value="">All Categories</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="sports">Sports & Outdoor</option>
+                    <option value="kids">Kids & Baby</option>
+                    <option value="home">Home & Garden</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Search items..." class="search-input">
+            </div>
+
+            <div id="marketplace-listings" class="listings-grid">
+                <p class="empty-state">No listings yet. Be the first to list something!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Rentals -->
+    <section id="rentals" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Property Rentals</span>
+                <h2 class="section-title">Holiday & Long-Term Rentals</h2>
+                <p class="section-subtitle">List your property or find your next stay in Fresnaye</p>
+            </div>
+
+            <div class="rental-types">
+                <div class="rental-type-card">
+                    <h3>🌴 Holiday Rentals</h3>
+                    <p>Short-term stays for visitors</p>
+                    <ul class="feature-list">
+                        <li>By the night or week</li>
+                        <li>Furnished & equipped</li>
+                        <li>Prime Fresnaye locations</li>
+                    </ul>
+                </div>
+                <div class="rental-type-card">
+                    <h3>🏠 Long-Term Rentals</h3>
+                    <p>Monthly leases for residents</p>
+                    <ul class="feature-list">
+                        <li>6-12 month leases</li>
+                        <li>Apartments & houses</li>
+                        <li>Verified landlords</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="rental-listings" class="listings-grid">
+                <!-- Rental listings loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple as a Text Message</h2>
+                <p class="section-subtitle">Our AI assistant handles everything via WhatsApp</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>WhatsApp the Bot</h3>
+                    <p>Send a message to <strong>083 778 7970</strong></p>
+                    <div class="example-bubble">
+                        "LIST: Mountain bike, R2000"
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>AI Creates Listing</h3>
+                    <p>Instant confirmation & link</p>
+                    <div class="example-bubble reply">
+                        "✅ Listed! Mountain bike - R2,000<br>
+                        View: fresnaye-market.co.za"
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Buyers Contact You</h3>
+                    <p>Direct WhatsApp from interested buyers</p>
+                    <div class="example-bubble">
+                        "Hi! Is the bike still available?"
+                    </div>
+                </div>
+            </div>
+
+            <div class="commands-reference">
+                <h3>Quick Commands</h3>
+                <div class="commands-grid">
+                    <div class="command-item">
+                        <code>LIST: [item], R[price]</code>
+                        <span>Create new listing</span>
+                    </div>
+                    <div class="command-item">
+                        <code>SOLD</code>
+                        <span>Remove your listing</span>
+                    </div>
+                    <div class="command-item">
+                        <code>EDIT: Change price to R1500</code>
+                        <span>Update listing</span>
+                    </div>
+                    <div class="command-item">
+                        <code>HELP</code>
+                        <span>See all commands</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertisement Space -->
+    <section class="section section-ad">
+        <div class="container">
+            <div class="ad-space">
+                <div class="ad-placeholder">
+                    <p class="ad-label">Community Sponsor</p>
+                    <h3>Your Business Here</h3>
+                    <p>Reach Fresnaye & Beacon Isle residents</p>
+                    <a href="https://wa.me/27837787970?text=Interested%20in%20advertising" class="btn-secondary">Enquire About Advertising</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Join your neighbors buying, selling & sharing in Fresnaye</p>
+                <a href="https://wa.me/27837787970?text=HELP" class="btn-primary btn-large">
+                    <span class="icon">💬</span> WhatsApp: 083 778 7970
+                </a>
+                <p class="cta-note">Free for Fresnaye & Beacon Isle residents</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Fresnaye Marketplace</h4>
+                    <p>AI-powered community marketplace for Fresnaye & Beacon Isle.</p>
+                    <p class="footer-tech">Powered by WhatsApp AI</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#beacon-isle">Beacon Isle</a></li>
+                        <li><a href="#marketplace">Second Hand</a></li>
+                        <li><a href="#rentals">Rentals</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>WhatsApp: <a href="https://wa.me/27837787970">083 778 7970</a></p>
+                    <p>For Fresnaye & Beacon Isle residents only</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fresnaye Marketplace. Built for the community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+    <script>
+        // Initialize Supabase
+        const SUPABASE_URL = 'https://fuddzrlnbrseofguuikp.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1ZGR6cmxuYnJzZW9mZ3V1aWtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MDE5NjMsImV4cCI6MjA4NzE3Nzk2M30.pAWnJbzoS-mWOt3LiCVSxb1exm8eT0_rAfT9kSt2XJo';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+    <script src="../js/app.js"></script>
+    <script src="js/fresnaye.js"></script>
+</body>
+</html>
